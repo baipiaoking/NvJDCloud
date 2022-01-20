@@ -264,7 +264,7 @@ docker pull znm888/nvjdc
 echo -e "${green}开始创建nvjdc容器${plain}"
 docker run   --name nvjdc -p ${jdcport}:80 -d  -v  "$(pwd)":/app \
 -v /etc/localtime:/etc/localtime:ro \
--it --privileged=true  nolanhzy/nvjdc:latest
+-it --privileged=true  znm888/nvjdc
 docker update --restart=always nvjdc
 
 baseip=$(curl -s ipip.ooo)  > /dev/null
@@ -320,10 +320,10 @@ fi
 fi
 baseip=$(curl -s ipip.ooo)  > /dev/null
 
-#docker pull nolanhzy/nvjdc:latest
+#docker pull znm888/nvjdc
 #docker run   --name nvjdc -p ${portinfo}:80 -d -v  "$(pwd)":/app \
 #-v /etc/localtime:/etc/localtime:ro \
-#-it --privileged=true  nolanhzy/nvjdc:latest
+#-it --privileged=true  znm888/nvjdc
 #docker update --restart=always nvjdc
 docker restart nvjdc
 echo -e "${green}nvjdc更新完毕，脚本自动退出。${plain}"
